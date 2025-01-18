@@ -13,9 +13,8 @@ public class StringManipulations implements InnerStringManipulations {
         return cantvowels;
     }
     public String invertCapitalize(String str){
-        String lowerCase = str, upperCase=str;
-        lowerCase = lowerCase.toLowerCase();
-        upperCase = upperCase.toUpperCase();
+        String lowerCase = str.toLowerCase();
+        String upperCase = str.toUpperCase();
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             if(lowerCase.charAt(i)== str.charAt(i)){
@@ -36,4 +35,45 @@ public class StringManipulations implements InnerStringManipulations {
         
         return true;
     }
+    public String longestWord(String str){
+        String longest = "";
+        String temp = "";
+        for(int i =0; i<str.length();i++){
+            char current = str.charAt(i);
+            if (Character.isLetter(current)){
+                temp +=current;
+            }else{
+                if(temp.length()>longest.length()){
+                longest = temp;
+                }
+            temp ="";
+            }
+        }
+           if (temp.length() > longest.length()) {
+               longest = temp;
+           }
+        return longest;
+    }
+    private Boolean isVowel(char character){
+        boolean isVowel = false;
+        for (char vowel : vowels) {
+            if(character==vowel){
+            isVowel = true;
+            break;
+         }
+        }
+        return isVowel;
+    }
+    public String replaceVowelsXCharacter(String str,Character replacer){
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str.length(); i++){
+        if (isVowel(str.charAt(i))) {
+            result.append(replacer);
+        } else {
+            result.append(str.charAt(i));
+        }
+    }
+    return result.toString();
+    }
+
 }

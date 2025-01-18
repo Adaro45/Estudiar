@@ -1,8 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Stack;
 public class Main {
     
     public static void main(String[] args) throws ExceptionFirstNumberBigger {
@@ -30,6 +25,8 @@ public class Main {
         // String inverted = ism.invertCapitalize(str);
         // System.out.println(inverted);
         // System.out.println(ism.isPalindrome("ab654ba"));
+        // System.out.println(ism.longestWord(str));
+        System.out.println(ism.replaceVowelsXCharacter(str,'*'));
     }
 
 }
